@@ -50,10 +50,14 @@ while True:
             print("Você não pode realizar mais saques hoje!\nTente novamente amanhã.")
 
     if opcao == 3:
+        print(10*"=" + "EXTRATO" + 10*"=")
         print(f"A conta atual possui: R$ {saldo}!")
         print("Operações realizadas no último atendimento:\n")
-        for x in operacoes:
-            print(x)
+        if not operacoes:
+            print("Não foram realizadas operações no dia de hoje")
+        else:
+            for x in operacoes:
+                print(x)
         print("\nDeseja realizar alguma nova consulta?\n")
 
 print("O banco Dante_Cross agradeçe o seu contato, foi um prazer negociar com você!")
