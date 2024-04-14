@@ -18,9 +18,12 @@ while True:
     if opcao == 1:
         try:
             deposito = float(input("Digite o valor de deposito: R$ "))
-            saldo += deposito
-            print(f"O saldo atual é de R$ {saldo}")
-            operacoes.append("Depósito no valor de: R$" + f"{deposito:.2f}")
+            if deposito <= 0:
+                print("Operação inválida!\nValor 0 ou negativo.")
+            else:
+                saldo += deposito
+                print(f"O saldo atual é de R$ {saldo}")
+                operacoes.append("Depósito no valor de: R$" + f"{deposito:.2f}")
         except:
                 print("Foi digitado uma opção inválida!\nTente novamente")
                 
